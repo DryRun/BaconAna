@@ -19,9 +19,11 @@ namespace baconhep
       float x_1,   x_2;    // parton momentum fraction
       float scalePDF;      // Q-scale used for PDF evaluation
       float xs;            // cross section from LHE file
-      float weight;        // generator-level event weight
+      stdt::vector<float> weights; // generator-level event weights for systematics
 
-    ClassDef(TGenEventInfo,3)
+      inline float weight() {return weights[0];}
+
+    ClassDef(TGenEventInfo,4)
   };
 }
 #endif
